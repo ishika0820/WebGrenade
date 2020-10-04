@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+
+*,
+*::before
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --green-light: #86A29A;
+    --white-green: #EBEDE4;
+    --gradient-color: linear-gradient(to right, var(--white-green), var(--green-light));
+    --gradient-color-alt: linear-gradient(to right, var(--green-light), var(--white-green));
+}
+html{
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    margin: 0 0;
+}
+.container {
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 0.25rem;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+section {
+    padding: 5rem 0;
+}
+.header{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #EBEDE4;
+    z-index: 999;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img{
+    width: 30%;
+    height: 30%;
+}
+.hamburger-menu {
+    font-size: 2.6rem;
+    color: #013E42;
+    cursor: pointer;
+    position: relative;
+    z-index: 1500;
+}
+.hamburger-menu .fa-times {
+    display: none;
+}
+.menu-open .hamburger-menu .fa-times{
+    display: block;
+}
+.menu-open .hamburger-menu .fa-bars{
+    display: none;
+}
+
+.nav-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EBEDE4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1400;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.menu-open .nav-list{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-item:not(:last-child){
+    margin-bottom: .5rem;
+}
+.nav-link{
+    display: block;
+    color: #013E42;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1rem;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: url("../img/herobg.svg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.hero:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+}
+.main-heading{
+    color: #fff;
+    line-height: 1;
+    text-shadow: 1px 1px 1rem rgba(0,0,0,.5);
+    margin-bottom: 2.5rem;
+}
+.title{
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.info{
+    font-size: 3.2rem;
+    font-weight: 300;
+    font-family: 'Courgette', cursive;
+}
+.btn {
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 3.5rem;
+    border: none;
+    border-radius: 10rem;
+    display: flex;
+    width: 7%;
+}
+.btn-gradient {
+    background-image: var(--gradient-color);
+}
+.section-head{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.heading {
+    display: block;
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-gap: 0.1rem;
+}
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.recent-movies {
+    height: 35rem;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+    z-index: 0;
+}
+.recent-movies:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #86A29A;
+    opacity: 50%;
+    z-index: -1;
+}
+.img-movie {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+.movie-name {
+    font-size: 2.6rem;
+}
+.imdb-rating {
+    font-size: 1.8rem;
+}
+.movie-rating {
+    margin: 1rem 0 2.5rem;
+}
+.full{
+    color: #fa9e2c;
+}
+.empty {
+    color: #fff;
+}
+

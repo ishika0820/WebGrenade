@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+
+*,
+*::before
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --green-light: #86A29A;
+    --white-green: #EBEDE4;
+    --gradient-color: linear-gradient(to right, var(--white-green), var(--green-light));
+    --gradient-color-alt: linear-gradient(to right, var(--green-light), var(--white-green));
+}
+html{
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    margin: 0 0;
+}
+.container {
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 0.15rem;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+section {
+    padding: 5rem 0;
+}
+.header{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #EBEDE4;
+    z-index: 999;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img{
+    width: 30%;
+    height: 30%;
+}
+.hamburger-menu {
+    font-size: 2.6rem;
+    color: #013E42;
+    cursor: pointer;
+    position: relative;
+    z-index: 1500;
+}
+.hamburger-menu .fa-times {
+    display: none;
+}
+.menu-open .hamburger-menu .fa-times{
+    display: block;
+}
+.menu-open .hamburger-menu .fa-bars{
+    display: none;
+}
+
+.nav-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EBEDE4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1400;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.menu-open .nav-list{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-item:not(:last-child){
+    margin-bottom: .5rem;
+}
+.nav-link{
+    display: block;
+    color: #013E42;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1rem;
+}
